@@ -1,3 +1,30 @@
+qubes-desktop-linux-manager (4.2.25-1) unstable; urgency=medium
+
+  [ ooops ]
+  * Devices widget: label recently-connected devices as "NEW"
+  * Fixing Pylint error and initial value for connection_timestamp
+  * Update actionable_widgets.py
+
+  [ kennethrrosen ]
+  * Change color and punctuation
+  * Update color from blue to #99bfff
+  * Change color from #99bfff to #63a0ff
+
+  [ Ali Mirjamali ]
+  * Fixing Qubes OS Update window height on small dispplays
+  * Global Config GUI UI minor glade string issues
+
+  [ Marek Marczykowski-Górecki ]
+  * Fix removing VM from obsolete_vms
+
+  [ Ali Mirjamali ]
+  * Help text in policy editor is wrapped to too wide size
+  * Fixing policy editor window size on 1024x168 displays
+  * Updater window Icon
+  * Improve Qubes OS Update reporting for dom0
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Sun, 11 Aug 2024 17:15:18 +0200
+
 qubes-desktop-linux-manager (4.2.24-1) unstable; urgency=medium
 
   [ Marek Marczykowski-Górecki ]
