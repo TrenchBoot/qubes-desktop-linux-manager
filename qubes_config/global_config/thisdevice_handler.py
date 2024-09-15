@@ -87,6 +87,14 @@ class ThisDeviceHandler(PageHandler):
             'thisdevice_pv_label')
         self.compat_pv_tooltip: Gtk.Image = gtk_builder.get_object(
             'thisdevice_pv_tooltip')
+        self.compat_drtm_image: Gtk.Image = gtk_builder.get_object(
+            'thisdevice_drtm_image')
+        self.compat_drtm_label: Gtk.Label = gtk_builder.get_object(
+            'thisdevice_drtm_label')
+        self.compat_aem_image: Gtk.Image = gtk_builder.get_object(
+            'thisdevice_aem_image')
+        self.compat_aem_label: Gtk.Label = gtk_builder.get_object(
+            'thisdevice_aem_label')
 
         self.copy_button: Gtk.Button = \
             gtk_builder.get_object('thisdevice_copy_button')
@@ -137,7 +145,7 @@ class ThisDeviceHandler(PageHandler):
            qubes_ver=self._get_version('qubes'),
            bios=self._get_data('bios'),
            kernel_ver=self._get_version('kernel'),
-           xen_ver=self._get_version('xes'))
+           xen_ver=self._get_version('xen'))
         self.set_state(self.compat_hvm_image, self._get_data('hvm'))
         self.compat_hvm_label.set_markup(f"<b>HVM:</b> {self._get_data('hvm')}")
 
@@ -152,9 +160,9 @@ class ThisDeviceHandler(PageHandler):
         self.set_state(self.compat_tpm_image,
                        'yes' if self._get_data('tpm') == '1.2' else 'maybe')
         if self._get_data('tpm') == '2.0':
-            self.set_state(self.compat_tpm_image, 'maybe')
+            self.set_state(self.compat_tpm_image, 'yes')
             self.compat_tpm_label.set_markup(
-                _("<b>TPM version</b>: 2.0 (not yet supported)"))
+                _("<b>TPM version</b>: 2.0"))
         elif self._get_data('tpm') == '1.2':
             self.set_state(self.compat_tpm_image, 'yes')
             self.compat_tpm_label.set_markup(
@@ -163,6 +171,25 @@ class ThisDeviceHandler(PageHandler):
             self.set_state(self.compat_tpm_image, 'no')
             self.compat_tpm_label.set_markup(
                 _("<b>TPM version</b>: device not found"))
+
+        self.compat_drtm_label.set_markup(
+            f"<b>DRTM capable</b>: {self._get_data('drtm')}")
+        self.set_state(self.compat_drtm_image, self._get_data('drtm'))
+
+        self.compat_aem_label.set_markup(
+            f"<b>AEM status</b>: {self._get_data('aem')}")
+        if self._get_data('aem') == 'Unknown':
+            self.set_state(self.compat_aem_image, 'no')
+        elif self._get_data('aem') == 'Unsupported':
+            self.set_state(self.compat_aem_image, 'no')
+        elif self._get_data('aem') == 'Installed':
+            self.set_state(self.compat_aem_image, 'maybe')
+        elif self._get_data('aem') == 'Inactive or failed':
+            self.set_state(self.compat_aem_image, 'maybe')
+        elif self._get_data('aem') == 'Active':
+            self.set_state(self.compat_aem_image, 'yes')
+        else:
+            self.set_state(self.compat_aem_image, 'no')
 
         self.set_state(self.compat_remapping_image, self._get_data('remap'))
         self.compat_remapping_label.set_markup(

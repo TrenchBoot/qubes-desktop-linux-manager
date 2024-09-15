@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.40.0 -->
+<!-- Generated with glade 3.38.2 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <!-- interface-css-provider-path qubes-global-config-light.css -->
@@ -6911,13 +6911,14 @@ to global clipboard</property>
                           </packing>
                         </child>
                         <child>
-                          <!-- n-columns=3 n-rows=7 -->
+                          <!-- n-columns=3 n-rows=9 -->
                           <object class="GtkGrid">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="halign">start</property>
                             <property name="row-spacing">10</property>
                             <property name="column-spacing">10</property>
+                            <property name="row-homogeneous">True</property>
                             <child>
                               <object class="GtkLabel" id="thisdevice_hvm_label">
                                 <property name="visible">True</property>
@@ -7056,54 +7057,6 @@ to global clipboard</property>
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="thisdevice_certified_box_yes">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="halign">center</property>
-                                <child>
-                                  <object class="GtkImage" id="thisdevice_certified_img2">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="valign">center</property>
-                                    <property name="margin-right">20</property>
-                                    <property name="margin-end">20</property>
-                                    <property name="pixel-size">64</property>
-                                    <property name="icon-name">check_yes</property>
-                                    <property name="icon_size">6</property>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel" id="thisdevice_certified_yes_info">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="label" translatable="yes">&lt;b&gt;This device is officially certified for your current Qubes OS release.&lt;/b&gt;
-&lt;a href="https://www.qubes-os.org/doc/certified-hardware/"&gt;Learn more about Qubes-certified hardware.&lt;/a&gt;</property>
-                                    <property name="use-markup">True</property>
-                                    <property name="justify">center</property>
-                                    <property name="wrap">True</property>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">1</property>
-                                  </packing>
-                                </child>
-                                <style>
-                                  <class name="certified_yes"/>
-                                </style>
-                              </object>
-                              <packing>
-                                <property name="left-attach">2</property>
-                                <property name="top-attach">0</property>
-                                <property name="height">7</property>
-                              </packing>
-                            </child>
-                            <child>
                               <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
@@ -7183,6 +7136,100 @@ to global clipboard</property>
                               <packing>
                                 <property name="left-attach">1</property>
                                 <property name="top-attach">6</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkImage" id="thisdevice_drtm_image">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="stock">gtk-missing-image</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">7</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkImage" id="thisdevice_aem_image">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="stock">gtk-missing-image</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">8</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="thisdevice_drtm_label">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">DRTM capable:</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">7</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="thisdevice_aem_label">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">AEM status:</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">8</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkBox" id="thisdevice_certified_box_yes">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="halign">center</property>
+                                <child>
+                                  <object class="GtkImage" id="thisdevice_certified_img2">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="valign">center</property>
+                                    <property name="margin-right">20</property>
+                                    <property name="margin-end">20</property>
+                                    <property name="pixel-size">64</property>
+                                    <property name="icon-name">check_yes</property>
+                                    <property name="icon_size">6</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="thisdevice_certified_yes_info">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;This device is officially certified for your current Qubes OS release.&lt;/b&gt;
+&lt;a href="https://www.qubes-os.org/doc/certified-hardware/"&gt;Learn more about Qubes-certified hardware.&lt;/a&gt;</property>
+                                    <property name="use-markup">True</property>
+                                    <property name="justify">center</property>
+                                    <property name="wrap">True</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <style>
+                                  <class name="certified_yes"/>
+                                </style>
+                              </object>
+                              <packing>
+                                <property name="left-attach">2</property>
+                                <property name="top-attach">0</property>
+                                <property name="height">9</property>
                               </packing>
                             </child>
                             <style>
